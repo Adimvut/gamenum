@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+        <link rel="stylesheet" type="text/css" href="numbers.css">
+        <script src="numbers.js"></script>
+        <script>
+        var board = [
+                    [" "," "," "," "," "],
+                    [" "," "," "," "," "],
+                    [" "," "," "," "," "],
+                    [" "," "," "," "," "],
+                    [" "," "," "," "," "],
+                    ];
+
+        var stage = 1
+        var round = 1
+        
+        var num_block = 0
+        
+        var red = 0
+        var black = 0
+        
+        var num_red1 = 3
+        var num_red2 = 2
+        var num_red3 = 2
+        var num_red4 = 1
+        
+        var num_black1 = 3
+        var num_black2 = 2
+        var num_black3 = 2
+        var num_black4 = 1
+        
+        var num_user_spaceship = 0
+        var num_inactive_mine = 0
+        var num_robotic_spaceship = 0
+        var turn = 0
+        var user_row
+        var user_column
+        var red_array = new Array()
+        var black_array = new Array()
+        var block_array = new Array()
+
+        init()
+        </script>
+    </head>
+    <body>
+        <div id="container">
+                <div id="left">
+                    <div id="title">Numbers Game</div>
+                    <div id="game_information" class="font"></div>
+                    <div id="turn_information" class="font"></div>
+                    <div id="information" class="font"></div>
+                </div>
+                <div id="game_area">
+                        <div id="table_area">
+                                <table id="table"></table>
+                        </div>
+                        <div id="user_input" hidden>
+                                <input type="text" id="textfield">
+                                <button type="button" id="user_turn_button" onclick="userTurn()">Comfirm User Operation<span class="pus"></span></button>
+                        </div> 
+                        <div id="user_selection" hidden>
+                                <button type="button" id="user_setup_button" onclick="userSetUp()">Comfirm Selected Object<span class="pus"></span></button>
+                        </div> 
+                </div> 
+                <div id="right">
+                    <div id="icon_area" class="font">
+                        <img src="image/block.jpeg"  alt="block" />Block<br>
+                        <img src="image/red1.jpg"  alt="red1" />Red1<br>
+                        <img src="image/red2.jpg"  alt="red2" />Red2<br>
+                        <img src="image/red3.jpg"  alt="red3" />Red3<br>
+                        <img src="image/red4.jpg"  alt="red4" />Red4<br>
+
+                    </div>
+                    <div id="computer_button_area" hidden>
+                        <button type="button" id="computer_turn_button" onclick="computerTurn()">Execute Computer Turn<span class="pus"></span></button>
+                    </div>
+                    <div id="button_area">
+                        <button type="button" onclick="checkSetting()">Next setting<span class="pus"></span></button>
+                    </div>
+                </div> 
+        </div>
+        <script>
+            init()
+        </script>
+    </body>
+</html>
